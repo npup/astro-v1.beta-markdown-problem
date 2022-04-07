@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+---
+<Layout title="Home">
+
+    <p>
+        These pages use <code>astro@1.0.0-beta.5</code>, and have a React integration going (though no actual React is used anywhere).
+    </p>
+
+    <h2>The problem</h2>
+    <p>
+        The content for the "About" page is pure markdown, but can no longer be imported and used as in (for example) <code>v0.22.20</code>.
+        Astro seem to assume the <code>&lt;Content /&gt;</code> tag is to be rendered with React, and fails with some mentions of React-related problems.
+    </p>
+
+    <pre>
+---
+import Content from "../path/to/content/about.md";
+---
+
+&lt;Content /&gt;</pre>
+
+
+    <p>
+        <em>A suggestion in the support thread on Discord suggested trying to append the <code>?raw</code> directive to the markdown import. I hadn't heard of that
+        being applicable to markdown, but tried it anyway.  It ended up rendering the string <code>undefined</code>.</em>
+    </p>
+
+Do
+<ul>
+<li>
+    <pre>
+git checkout astro-v0.22.20 && npm run start:clean</pre>
+to see how it works in <code>v0.22.20</code>.
+</li>
+<li>
+    <pre>
+git checkout master && npm run start:clean</pre>
+to see how it works in <code>v1.0.0-beta.5</code>.
+</li>
+</ul>
+</Layout>
