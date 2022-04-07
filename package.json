@@ -1,0 +1,15 @@
+{
+    "name": "@example/minimal",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "start:clean": "rm -rf package-lock.json node_modules && npm i && npm start"
+    },
+    "devDependencies": {
+        "astro": "^1.0.0-beta.5"
+    }
+}
