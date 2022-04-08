@@ -1,7 +1,48 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-import Content from "../content/about.md";
 ---
-<Layout title="About">
-    <Content />
+<Layout title="Home">
+
+    <p>
+        These pages use <code>astro@0.22.20</code>.
+    </p>
+
+    <h2>No problem</h2>
+    <p>
+        In <code>astro@0.22.20</code>, markdown files can be imported and displayed as if if they were components out of the box.
+    </p>
+
+    <p>
+        I like.
+    </p>
+
+        <pre>
+---
+import Content from "../path/to/content/about.md";
+---
+
+&lt;Content /&gt;
+        </pre>
+
+    <p>
+        This does not work in <code>astro@1.0.0-beta.5</code>.
+    </p>
+
+<hr />
+
+Do
+
+<ul>
+<li>
+    <pre>
+git checkout master && npm run start:clean</pre>
+to see how it works in <code>v1.0.0-beta.5</code>.
+</li>
+<li>
+    <pre>
+git checkout astro-v1.0.0-beta.5-react && npm run start:clean</pre>
+to see how it works in <code>v1.0.0-beta.5</code> <em>with a React integration registered</em>.
+</li>
+</ul>
+
 </Layout>

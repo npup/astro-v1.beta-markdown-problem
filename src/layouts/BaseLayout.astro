@@ -8,15 +8,50 @@ const { title } = Astro.props;
         <meta name="description" content="web page" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
+        <style>
+            body {
+                max-width: 640px;
+                min-width: 340px;
+                margin: 0 auto;
+                padding: 0 1em;
+                line-height: 1.4;
+            }
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1em 0;
+            }
+            h1 {
+                margin: 0;
+            }
+            nav {
+                display: flex;
+                gap: 1em;
+            }            
+        </style>
+        <style global>
+            code {                
+                background-color: #eee;
+                padding: 2px 3px;
+            }
+            pre {
+                padding: .5em;
+                background-color: #eee;
+            }
+        </style>
     </head>
     <body>
-    <header>
-    <h1>{title}</h1>
-    </header>
-    <main>
-        <slot />
-    </main>
-    
-        
+
+        <header>
+            <h1>{title}</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+        <main>
+            <slot />
+        </main>
     </body>
 </html>

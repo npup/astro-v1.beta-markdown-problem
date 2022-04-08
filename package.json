@@ -6,9 +6,10 @@
         "dev": "astro dev",
         "start": "astro dev",
         "build": "astro build",
-        "preview": "astro preview"
+        "preview": "astro preview",
+        "start:clean": "rm -rf package-lock.json node_modules && npm i && npm start"
     },
     "devDependencies": {
-        "astro": "^1.0.0-beta.4"
+        "astro": "^0.22.20"
     }
 }

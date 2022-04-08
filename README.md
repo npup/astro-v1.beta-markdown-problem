@@ -1,43 +1,20 @@
-# Astro Starter Kit: Minimal
+# Markdown problem in astro 1 (beta) vs pre-beta
 
-```
-npm init astro -- --template minimal
-```
+In short: In the beta, a markdown file can no longer simply be imported and rendered like a component - Astro thinks there is a missing (FE-framework) integration.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+And with an integration registered, it fails in another way (at least for React).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This repo has three branches, showing the difference between versions `v0.22.20` and `v1.0.0-beta.5` (with and without a registered React integration).
 
-## 🚀 Project Structure
+To study any of the examples, built with fresh dependencies, run:
 
-Inside of your Astro project, you'll see the following folders and files:
+    npm run start:clean
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The examples are:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+| Version                         | How to run it                                                   | Works |
+|---------------------------------|-----------------------------------------------------------------|-------|
+| astro@v0.22.20                  | `git checkout astro-v0.22.20 && npm run start:clean`            | Yes   |
+| astro@v1.0.0-beta.5             | `git checkout master && npm run start:clean`                    | No    |
+| astro@v1.0.0-beta.5, with React | `git checkout astro-v1.0.0-beta.5-react && npm run start:clean` | No    |
